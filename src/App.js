@@ -8,6 +8,9 @@ function App() {
 			case "place": {
 				const newState = JSON.parse(JSON.stringify(state))
 				const player = newState.currentPlayer
+				if(newState.board[i][j]!==0) {
+					return state;
+				}
 				newState.board[i][j] = player;
 				const isXWon = checkWon("x", newState);
 
